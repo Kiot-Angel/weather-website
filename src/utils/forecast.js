@@ -9,7 +9,8 @@ forecast = (latitude,longitude, callback) => {
         if (res.error) { 
             callback('Unable to find Location !', undefined)
         } else {
-            callback(undefined, `It is currently ${res.current.temperature}  fehraneit out. It feels like ${res.current.feelslike} fehraneit out`)
+            callback(undefined, `${res.current.weather_descriptions} with ${res.current.humidity} % Humidity.
+            It is currently ${res.current.temperature}  fehraneit out. It feels like ${res.current.feelslike} fehraneit out`)
         }
     })
     .catch(err => console.error('OOPS! Unable to connect with Network',err));
